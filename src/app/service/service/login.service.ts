@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 import * as firebase from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class LoginService {
   email: any;
   password: any;
   loading: Boolean = false;
+  auth: any;
   constructor(private http: HttpClient, private routes: Router, public  afAuth:  AngularFireAuth, ) { }
   check(email, password) {
     return new Promise<any>((resolve, reject) => {
@@ -38,12 +40,11 @@ export class LoginService {
             localStorage.setItem('currentUser', JSON.stringify(this.userid));
             console.log(this.userid);
         }, error => {
+               this.auth.invalid = false;
           alert('No user Exit against Email');
           // alert("Invalid Username and Password");
           console.log('Oooops!');
         });
-        // this.mailstatus = res.user.emailVerified;
-        // this.global.login(this.email, this.password,this.mailstatus);
       }, err => {
       alert(err);
     });
@@ -70,5 +71,18 @@ export class LoginService {
     getcountry() {
       return this.http.get('https://restcountries.eu/rest/v2/all').pipe (
       );
+    }
+    forget(email , password) {
+      const data = {
+        email: email,
+        password: password
+      };
+      this.http.post('https://sum-invoice-app.herokuapp.com/user/forget', data)
+      .subscribe(response => {
+        console.log('POST Response:', response);
+        this.routes.navigate(['/login']);
+      }, () => {
+       console.log ('Oooops!');
+      });
     }
 }

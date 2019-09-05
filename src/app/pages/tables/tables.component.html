@@ -113,7 +113,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <!-- <tr>
                 <th scope="row">
                   <div class="media align-items-center">
                     <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
@@ -170,8 +170,8 @@
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
+              </tr> -->
+              <!-- <tr>
                 <th scope="row">
                   <div class="media align-items-center">
                     <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
@@ -228,8 +228,8 @@
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
+              </tr> -->
+              <!-- <tr>
                 <th scope="row">
                   <div class="media align-items-center">
                     <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
@@ -286,8 +286,8 @@
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
+              </tr> -->
+              <!-- <tr>
                 <th scope="row">
                   <div class="media align-items-center">
                     <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
@@ -344,8 +344,8 @@
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
+              </tr> -->
+              <!-- <tr>
                 <th scope="row">
                   <div class="media align-items-center">
                     <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
@@ -402,8 +402,15 @@
                     </div>
                   </div>
                 </td>
-              </tr>
+              </tr> -->
             </tbody>
+            <tr *ngFor="let item of allitem">
+              <td >{{item.item_name|titlecase}}</td>
+              <td >{{item.item_type|titlecase}}</td>
+              <td >{{item.item_quantity|number:'2.1-2'}}</td>
+              <td >{{item.sale_rate|currency:'	PKR':'symbol'}}</td>
+              <td >{{item.purchase_rate|currency:'	PKR':'symbol'}}</td>
+            </tr>
           </table>
         </div>
         <div class="card-footer py-4">

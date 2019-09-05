@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   country: any;
   data: any;
   countries: any;
-  intial_cash = 0;
+  intial_cash = Number;
   countryname = [];
   // tslint:disable-next-line: max-line-length
   constructor(private service: LoginService , private routes: Router, public  afAuth:  AngularFireAuth, public http: HttpClient, public auth: AuthService) { }

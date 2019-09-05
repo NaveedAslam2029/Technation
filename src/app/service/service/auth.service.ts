@@ -10,9 +10,11 @@ import { ToastrService } from 'ngx-toastr';
 export class AuthService {
   user: Observable<firebase.User>;
   invalid: Boolean = false;
+  loading: boolean;
   constructor( public router: Router, private service: LoginService, public afAuth: AngularFireAuth, private toastr: ToastrService) { }
   login(email: string, password: string) {
-    this.service.loading = true;
+    this.invalid = true;
+    this.service.loading = false;
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Nice, it worked!');
