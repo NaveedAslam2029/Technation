@@ -14,6 +14,10 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ItemComponent } from '../../pages/item/item.component';
+import { NewContactComponent } from 'src/app/pages/new-contact/new-contact.component';
+import { NewitemComponent } from 'src/app/pages/newitem/newitem.component';
+import { BlogPostsComponent } from 'src/app/pages/blog-posts/blog-posts.component';
+import { NewblogComponent } from 'src/app/pages/newblog/newblog.component';
 
 
 @NgModule({
@@ -32,6 +36,10 @@ import { ItemComponent } from '../../pages/item/item.component';
     IconsComponent,
     MapsComponent,
     ItemComponent,
+    NewContactComponent,
+    NewitemComponent,
+    BlogPostsComponent,
+    NewblogComponent
     ],
 })
 

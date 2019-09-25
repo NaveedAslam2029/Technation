@@ -17,8 +17,12 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './service/service/auth.service';
 import { LoginService } from './service/service/login.service';
 import { NgxLoadingModule } from 'ngx-loading';
- 
 import { ToastrModule } from 'ngx-toastr';
+
+
+
+
+
 
 const config = {
   apiKey: 'AIzaSyBDowWJg2HFOlYivSbA6oReSq4U7AEsZp4',
@@ -49,9 +53,11 @@ const config = {
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
+
+
+
   ],
-  
-  providers: [ LoginService,AuthService],
+  providers: [ LoginService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

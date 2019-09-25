@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AmsService } from 'src/app/service/service/ams.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NewitemComponent } from '../newitem/newitem.component';
 
 @Component({
   selector: 'app-item',
@@ -27,9 +28,9 @@ export class ItemComponent implements OnInit {
       }
   );
     }
-  // open() {
+  open() {
 
-  //   const modalRef = this.modalService.open(, { size: 'lg', backdrop : 'static'  });
-  //  modalRef.componentInstance.name = 'New Asset';
-  //  }
+    const modalRef = this.modalService.open(NewitemComponent, { size: 'lg', backdrop : 'static'  });
+   modalRef.componentInstance.name = 'New Asset';
+   }
 }

@@ -28,6 +28,14 @@ export class AmsService {
   url = 'https://sum-invoice-app.herokuapp.com';
   userId: any;
   contactid: any;
+// blog crud
+
+addblog(blog) {
+  return this.http.post(this.url + '/blog/create', + blog);
+  }
+
+
+
 // item CRUDs
 getitem() {
   this.user = this.logService.userid;

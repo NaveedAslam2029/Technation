@@ -32,7 +32,7 @@
               <small class="text-muted">  LogIn</small>
             </h1>
           </div>
-          <form role="form" data-toggle="validator">
+          <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
             <div class="form-group mb-3">
               <div class="input-group input-group-alternative">
                 <div class="input-group-prepend">
