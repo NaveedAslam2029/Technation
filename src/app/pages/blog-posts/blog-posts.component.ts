@@ -9,16 +9,27 @@ import { NewblogComponent } from '../newblog/newblog.component';
   styleUrls: ['./blog-posts.component.scss']
 })
 export class BlogPostsComponent implements OnInit {
+  allblog: any;
 
   constructor(private modalService: NgbModal,
     private amsService: AmsService) { }
 
   ngOnInit() {
+    this.fetchitem();
   }
   open() {
 
     const modalRef = this.modalService.open(NewblogComponent, { size: 'lg', backdrop : 'static'  });
    modalRef.componentInstance.name = 'New Asset';
    }
+   fetchitem() {
+    this. amsService.getblogs()
+    .subscribe(
+      data => {
+         console.log(data);
+       this.allblog = data;
+      }
+  );
+    }
 
 }

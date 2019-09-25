@@ -31,12 +31,10 @@
             </thead>
             <tbody>
             </tbody>
-            <tr *ngFor="let item of allitem">
-              <td >{{item.item_name|titlecase}}</td>
-              <td >{{item.item_type|titlecase}}</td>
-              <td >{{item.item_quantity|number:'2.1-2'}}</td>
-              <td >{{item.sale_rate|currency:'	PKR':'symbol'}}</td>
-              <td >{{item.purchase_rate|currency:'	PKR':'symbol'}}</td>
+            <tr *ngFor="let post of allblog">
+              <td >{{post.post_title}}</td>
+              <td >{{post.post_desc}}</td>
+              <td >{{post.comments}}</td>
             </tr>
           </table>
         </div>

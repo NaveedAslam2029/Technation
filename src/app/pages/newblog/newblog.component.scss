@@ -29,10 +29,17 @@ select{
   font-size: 11px;
   margin-top: 10px;
   }
-  select:focus{
+  textarea{
     border: 1px solid;
     box-shadow: 0 0 5px rgb(255, 255, 255);
-    height: 27px;
+    height: 60px;
+    font-size: 11px;
+    margin-top: 10px;
+  }
+  textarea:focus{
+    border: 1px solid;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    height: 60px;
     font-size: 11px;
     margin-top: 10px;
   }

@@ -13,6 +13,7 @@ export class NewblogComponent implements OnInit {
   description: any;
   title: any;
 
+
   constructor(public http: HttpClient,
     private amsService: AmsService,
     private router: Router,
@@ -20,18 +21,19 @@ export class NewblogComponent implements OnInit {
     private modalService: NgbModal,
     public activeModal: NgbActiveModal) { }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
   addblog() {
     const data = {
       post_title : this.title,
       post_desc: this.description,
     };
-    this.http.post('https://sum-invoice-app.herokuapp.com/blog/create', data)
+    this.http.post('http://localhost:3000/blog/create', data)
         .subscribe(response => {
           console.log('POST Response:', response);
         }, () => {
          console.log ('Oooops!');
         });
     }
+  
 }

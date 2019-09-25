@@ -25,7 +25,7 @@ export class AmsService {
   email: any;
   password: any;
   user: any;
-  url = 'https://sum-invoice-app.herokuapp.com';
+  url = 'http://localhost:3000';
   userId: any;
   contactid: any;
 // blog crud
@@ -33,7 +33,12 @@ export class AmsService {
 addblog(blog) {
   return this.http.post(this.url + '/blog/create', + blog);
   }
-
+//
+getblogs() {
+  this.user = this.logService.userid;
+  // tslint:disable-next-line: label-position
+return this.http.get(this.url + '/blog/get-all');
+}
 
 
 // item CRUDs
