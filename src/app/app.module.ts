@@ -24,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 
 
+
 const config = {
   apiKey: 'AIzaSyBDowWJg2HFOlYivSbA6oReSq4U7AEsZp4',
     authDomain: 'sum-invoice.firebaseapp.com',
@@ -53,6 +54,7 @@ const config = {
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
+
 
 
 

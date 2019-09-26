@@ -4,6 +4,7 @@ import { AmsService } from 'src/app/service/service/ams.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-newblog',
   templateUrl: './newblog.component.html',
@@ -21,19 +22,20 @@ export class NewblogComponent implements OnInit {
     private modalService: NgbModal,
     public activeModal: NgbActiveModal) { }
 
-  ngOnInit() { 
+  ngOnInit() {
   }
   addblog() {
     const data = {
       post_title : this.title,
       post_desc: this.description,
     };
-    this.http.post('http://localhost:3000/blog/create', data)
+    this.http.post('https://blogtasktechnation.herokuapp.com/blog/create', data)
         .subscribe(response => {
           console.log('POST Response:', response);
+          this.activeModal.close();
+          this.router.navigate(['/blog']);
         }, () => {
          console.log ('Oooops!');
         });
     }
-  
 }

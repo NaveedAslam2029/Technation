@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AmsService } from 'src/app/service/service/ams.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NewblogComponent } from '../newblog/newblog.component';
+import { ViewblogComponent } from '../viewblog/viewblog.component';
 
 @Component({
   selector: 'app-blog-posts',
@@ -31,5 +32,9 @@ export class BlogPostsComponent implements OnInit {
       }
   );
     }
-
+    edit(blogid) {
+       this.amsService.blogid = blogid;
+          console.log(blogid, 'blog id in list component received');
+        const modalRef = this.modalService.open(ViewblogComponent, { size: 'lg', backdrop: 'static'});
+         modalRef.componentInstance.name = 'Update item'; }
 }

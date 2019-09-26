@@ -14,6 +14,7 @@ export class AmsService {
   amount: any;
   invoiceid: any;
   chekval: any;
+  blogid: any;
   constructor(private http: HttpClient, private modalService: NgbModal, public logService: LoginService) {
     this.chekval = JSON.parse(localStorage.getItem('currentUser'));
    }
@@ -25,22 +26,35 @@ export class AmsService {
   email: any;
   password: any;
   user: any;
-  url = 'http://localhost:3000';
+  url = 'https://blogtasktechnation.herokuapp.com';
   userId: any;
   contactid: any;
-// blog crud
-
-addblog(blog) {
-  return this.http.post(this.url + '/blog/create', + blog);
-  }
 //
 getblogs() {
   this.user = this.logService.userid;
   // tslint:disable-next-line: label-position
 return this.http.get(this.url + '/blog/get-all');
 }
-
-
+// edit blogs
+getblogById(blogid) {
+  console.log(blogid, 'blog id at ams service received');
+   return this.http.get(this.url + '/blog/get/' + blogid);
+   }
+   update(data) {
+    this.blogid = data.blogid;
+   console.log(this.itemid, 'update  blog through service');
+   const val = {
+    post_title : data.posttitle,
+    post_desc: data.desc,
+    comments: data.comments
+  };
+   return this.http.post(this.url + '/blog/update/' + this.blogid + '', val);
+    }
+   delete(id) {
+  this.blogid = id;
+   console.log(id, 'blog recved for delete action');
+    return this.http.post(this.url + '/blog/delete/' + id + '', id);
+   }
 // item CRUDs
 getitem() {
   this.user = this.logService.userid;

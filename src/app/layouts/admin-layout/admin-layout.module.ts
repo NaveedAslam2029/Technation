@@ -18,6 +18,7 @@ import { NewContactComponent } from 'src/app/pages/new-contact/new-contact.compo
 import { NewitemComponent } from 'src/app/pages/newitem/newitem.component';
 import { BlogPostsComponent } from 'src/app/pages/blog-posts/blog-posts.component';
 import { NewblogComponent } from 'src/app/pages/newblog/newblog.component';
+import { ViewblogComponent } from 'src/app/pages/viewblog/viewblog.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { NewblogComponent } from 'src/app/pages/newblog/newblog.component';
     NewContactComponent,
     NewitemComponent,
     BlogPostsComponent,
-    NewblogComponent
+    NewblogComponent,
+  ViewblogComponent
     ],
 })
 

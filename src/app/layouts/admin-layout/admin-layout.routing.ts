@@ -10,6 +10,7 @@ import { NewContactComponent } from 'src/app/pages/new-contact/new-contact.compo
 import { NewitemComponent } from 'src/app/pages/newitem/newitem.component';
 import { BlogPostsComponent } from 'src/app/pages/blog-posts/blog-posts.component';
 import { NewblogComponent } from 'src/app/pages/newblog/newblog.component';
+import { ViewblogComponent } from 'src/app/pages/viewblog/viewblog.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -21,6 +22,7 @@ export const AdminLayoutRoutes: Routes = [
      {path: 'newcontact', component: NewContactComponent},
      {path : 'newitem', component: NewitemComponent},
      {path: 'blog', component: BlogPostsComponent},
-     {path: 'newblog' , component: NewblogComponent}
+     {path: 'newblog' , component: NewblogComponent},
+     {path: 'viewblog', component: ViewblogComponent}
 
 ];

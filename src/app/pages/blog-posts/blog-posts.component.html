@@ -1,8 +1,6 @@
 <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
   <div class="container-fluid">
     <div class="header-body">
-      <!-- Card stats -->
-
     </div>
   </div>
 </div>
@@ -32,10 +30,16 @@
             <tbody>
             </tbody>
             <tr *ngFor="let post of allblog">
+                <td >{{post._id}}</td>
               <td >{{post.post_title}}</td>
               <td >{{post.post_desc}}</td>
               <td >{{post.comments}}</td>
+              <div class="float-center">
+                <button class="btn btn-sm btn-outline" style="background-color: darkgray;border-radius: 5px;" (click)="deleteitem(blogid)"><span><i class="far fa-trash-alt" style="color: white"></i></span></button>
+                <button class="btn btn-sm btn-outline" style="background-color: lightgray;border-radius: 5px;" (click)="edit(post._id)"> <i class="far fa-edit" style="color: white" > </i> </button>
+              </div>
             </tr>
+            
           </table>
         </div>
         <div class="card-footer py-4">
